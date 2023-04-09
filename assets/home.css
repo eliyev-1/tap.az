@@ -43,11 +43,7 @@ input[type="number"]::-webkit-outer-spin-button{
 select,input[type="text"],input[type="checkbox"],input[type="number"]{
 border:  0.05rem solid var(--color-grey-light-light-light-light-light);
 }
-option{
-    position: absolute;
-    width: 30rem;
-    right: 0;
-}
+
 input[type="text"]:nth-child(1){
 border-radius: 1rem 0 0 1rem ;
 }
@@ -61,8 +57,23 @@ justify-content: space-between;
 align-items: center;
 
 }
+.marka,.model,.weher{
+    position: relative;
+}
+.marka >input,.model >input,.weher>input{
+    z-index: 1;
+    width: 90%;
+    position: absolute;
+    
+}
+.marka >select,.model >select,.weher>select{
+position: absolute;
+right: 0; 
+}
+
+
 .model select,.marka select,.weher select{
-width: 10%;
+
 border-left: 0;
 }
 .model input,.marka input,.weher input{
@@ -88,14 +99,14 @@ color: var(--color-white);
 border: none;
 }
 .itifadeMuddeti input[type="checkbox"]:nth-of-type(1),.satici input[type="checkbox"]:nth-of-type(1),
-.il select:nth-of-type(1),.yurush input:nth-of-type(1),.hecm select:nth-of-type(1),.model input,.marka input,.weher input{
+.il select:nth-of-type(1),.yurush input:nth-of-type(1),.hecm select:nth-of-type(1){
 border-radius: 1rem 0 0 1rem ;
 }
 .itifadeMuddeti input[type="checkbox"]:nth-of-type(2),.satici input[type="checkbox"]:nth-of-type(2){
 border-radius: 0 ;
 }
 .itifadeMuddeti input[type="checkbox"]:nth-of-type(3),.satici input[type="checkbox"]:nth-of-type(3),
-.il select:nth-of-type(2),.yurush input:nth-of-type(2),.hecm select:nth-of-type(2),.model select,.marka select,.weher select{
+.il select:nth-of-type(2),.yurush input:nth-of-type(2),.hecm select:nth-of-type(2){
 border-radius: 0 1rem 1rem 0 ;
 }
 .itifadeMuddeti input[type="checkbox"]:nth-of-type(1):after,.satici input[type="checkbox"]:nth-of-type(1):after{
