@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+<!-- Css link --><!-- Css link --><!-- Css link --><!-- Css link --><!-- Css link --><!-- Css link --><!-- Css link --><!-- Css link --><!-- Css link --><!-- Css link -->
+
+<link rel="stylesheet" href="./assets/style.css">
+<link rel="stylesheet" href="./assets/general.css">
+<link rel="stylesheet" href="./assets/home.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
+integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- Googele Fonts -->    <!-- Googele Fonts -->    <!-- Googele Fonts -->    <!-- Googele Fonts -->    <!-- Googele Fonts -->    <!-- Googele Fonts -->    <!-- Googele Fonts -->  
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body onclick="hide()">
+
+<!-- Navbar (styling for general.css) --> <!-- Navbar (styling for general.css) --> <!-- Navbar (styling for general.css) --> <!-- Navbar (styling for general.css) --> <!-- Navbar (styling for general.css) --> <!-- Navbar (styling for general.css) --> 
+
+<nav class="nav">
+<div class="container">
+<div class="nav__content">
+<div class="nav__content__Left">
+<a href="#">Tap.az</a>
+<a href="#">Bina.az</a>
+<a href="#">Boss.az</a>
+</div>
+<div class="nav__content__Right">
+<div class="nav__content__Right__Left">
+<span>Dəstək:</span>
+<span> (012) 599-08-01;</span>
+<span> (012) 505-77-55</span>
+</div>
+<div class="nav__content__Right__Right">
+<a href="#">Yardım</a>
+<a href="#">Ru</a>
+<a href="#"><i class="fa-solid fa-heart"></i><span>Seçilmişlər</span></a>
+<a href="#"><i class="fa-solid fa-user"></i><span>Giriş</span></a>
+</div>
+</div>
+</div></div>
+</nav>
+<header class="header">
+<div class="container">
+<div class="header__content">
+<div class="header__content__left">
+<div class="header__logo">
+<img src="./assets/img/logo.svg" alt="">
+</div>
+<div class="header__menuIcon" onclick="headerMenuShowHide()">
+    <i class="fa-solid fa-square-caret-down"></i>
+</div>
+<div class="header__menu">
+<ul>
+<li><a href="#">Bütün elanlar</a></li>
+<li><a href="#">Avto salonlar</a></li>
+<li><a href="#">Ehtiyat hissələr və aksesuarlar</a></li>
+</ul>
+
+
+
+</div>
+
+</div>
+<div class="menuIcon" onclick="menuHideSheow()">
+    <i class="fa-solid fa-bars"></i>
+</div>
+<div class="header__content__right">
+<button> <i class="fa-regular fa-square-plus"></i> <span>Yeni elan</span></button>
+</div>
+</div>  
+</div>
+</header>
+<div class="sorting">
+<div class="container">
+<div class="sorting__content">
+<div class="sorting__content__items">
+<div class="sorting__content__item marka">
+<input type="text" value="Marka" onkeyup="disabledInput()">
+<select class="markaSelect">
+<option ></option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >Marka</option>
+<option >Marka</option>
+</select>
+</div>
+<div class="sorting__content__item model">
+<input type="text" value="Model" class="modelInput"  >
+<select >
+<option ></option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >Model</option>
+<option >Model</option>
+<option >Model</option>
+</select>
+</div>
+<div class="sorting__content__item itifadeMuddeti">
+<input type="checkbox" >
+<input type="checkbox">
+<input type="checkbox">
+</div>
+<div class="sorting__content__item weher">
+<input type="text" value="Şəhər">
+<select >
+<option ></option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >Şəhər</option>
+<option >Şəhər</option>
+</select>
+</div>
+<div class="sorting__content__item qiymet">
+<input type="text" value="Qiymət, min">
+<input type="text" value="maks">
+</div>
+<div class="sorting__content__item valyutaSelect">
+<select >
+<option value="">AZN</option>
+<option value="">USD</option>
+<option value="">EUR</option>
+</select>
+<input type="checkbox" >
+<input type="checkbox">
+
+</div>
+<div class="sorting__content__item">
+<select >
+<option value="">Ban növü</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option value="">Ban növü</option>
+<option value="">Ban növü</option>
+
+</select>
+</div> 
+<div class="sorting__content__item il">
+<select >
+<option value="">İl, min</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option value="">2023</option>
+<option value="">2022</option>
+</select>
+<select >
+<option value="">maks</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option value="">2023</option>
+<option value="">2022</option>
+</select>
+</div>
+<div class="sorting__content__item">
+<select >
+<option >Rəng</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option ><span class="qara"></span> <span>qara</span> </option>
+</select>
+</div>
+<div class="sorting__content__item">
+<select >
+<option >Yanacaq növü</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >Benzin</option>
+<option >Dizel</option>
+</select>
+</div>
+<div class="sorting__content__item">
+<select >
+<option >Ötürücü</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >Arxa</option>
+<option >Ön</option>
+<option >Tam</option>
+</select>
+</div>
+<div class="sorting__content__item suretQutusu">
+<select >
+<option >Sürətlər qutusu</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >Mexaniki</option>
+<option >Avtomat</option>
+<option >Robotlaşdırılmış</option>
+<option >Variator</option>
+</select>
+</div>
+<div class="sorting__content__item hecm">
+<select >
+<option value="">Həcm(sm),min</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option value="">0</option>
+<option value="">100</option>
+<option value="">200</option>
+<option value="">300</option>
+<option value="">400</option>
+</select>
+<select >
+<option value="">maks</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option value="">0</option>
+<option value="">100</option>
+<option value="">200</option>
+<option value="">300</option>
+<option value="">400</option>
+</select>
+</div>
+<div class="sorting__content__item guc">
+<input type="text" value="Güc(a. g.), min">
+<input type="text" value="maks">
+</div>
+<div class="sorting__content__item yurush">
+<input type="number" value="Yürüş(km), min">
+<input type="number" value="maks">
+</div>
+<div class="sorting__content__item satici">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+</div>
+<div class="sorting__content__item shiblerinSayi">
+<select >
+<option >Sahiblərinin sayı</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >1</option>
+<option >2</option>
+<option >3</option>
+<option >4 və daha çox</option>
+</select>
+</div>
+<div class="sorting__content__item">
+<select >
+<option >Yerlərinin sayı</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >1</option>
+<option >2</option>
+<option >3</option>
+<option >4</option>
+<option >5</option>
+<option >6</option>
+<option >7</option>
+</select>
+</div>
+<div class="sorting__content__item">
+<select >
+<option >Hansı bazar üçün yığılıb</option>
+<option ><span>X</span> <span>Sıfırla</span></option>
+<option >Amerika</option>
+<option >Avropa</option>
+<option >Asia</option>
+
+</select>
+
+</div>
+<div class="sorting__content__item mashininVeziyyeti">
+<input type="checkbox">
+<input type="checkbox">
+<input type="checkbox">
+</div>
+</div> 
+<div class="avtomobilinTechizati">
+<div><h6>Avtomobilin Təchizatı</h6></div>
+<div class="avtomobilinTechizati__checkbox">
+
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Yüngül lehimli disk</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Abs</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Abs</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Lyuk</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Yağış Sensoru</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Mərkəzi qapanma</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Park radarı</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Kondisioner</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Oturacaların isidilməsi</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Dəri salon</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Ksenon lampalar</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Arxa görüntü kamerası</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Arxa görüntü kamerası</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Yan pərdələr</span>
+</label>
+<label>
+<input id="id1"type="checkbox">
+<span for="id1">Oturacaqların ventilyasiyası</span>
+</label>
+</div>
+</div>
+
+</div>
+<div class="hideShow">
+<div class="hideShow__left">
+<span>Bu gün:</span>
+<a href="#"><span>1584</span><span> yeni elan</span></a>
+</div>
+<div class="hideShow__right">
+<span class="sifirla" onclick="sifirla()">Sıfırla</span>
+<span class="dahaChox" onclick="dahaChox()"><span>Daha çox filtr</span><i class="fa-solid fa-angle-down arrowDown"></i></span>
+<button>Elanları göstər</button>
+</div>
+</div>
+</div>
+</div>
+<div class="section__header">
+<div class="container">
+<h1>Vip elanlar</h1>
+</div> 
+</div>
+<div class="vipElanlar">
+<div class="container">
+<div class="vipElanlar__content">
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+</div></div></div>
+<div class="section__header">
+<div class="container">
+<h1>Son Elanlar</h1>
+</div> 
+</div>
+<div class="vipElanlar">
+<div class="container">
+<div class="vipElanlar__content">
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+<div class="vipElanlar__content__card">
+<div class="card__image">
+<img src="./assets/img/jeep.jpg" alt="">
+<div class="barter__faiz">
+<div class="barter">
+<i class="fa-solid fa-arrows-rotate refreshIcon"></i>
+</div>
+<div class="faiz">
+<i class="fa-solid fa-percent"></i>
+</div>
+</div>
+<span class="salon">Salon</span>
+<span class="heartIcon" onclick="heart()">
+<i class="fa-solid fa-heart  flatHeart"></i>
+<i class="fa-regular fa-heart lineHeart"></i>
+</span>
+</div>
+<h3>82 000 AZN</h3>
+<p>Jeep Grand Cherokee, Wrangler Willys Special Editions 2023, 1.6 L, 0 km</p>
+<div class="card__time">
+<span>Baku</span>
+<span>30.03.2023</span>
+<span>20:38</span>
+</div>
+</div>
+</div></div></div>
+
+<div class="ReklamYerleşdirin">
+<div class="container">
+<div class="ReklamYerleşdirin__content">
+<div class="ReklamYerleşdirin__left">
+<a href="#">Reklam yerləşdirin</a>
+</div>   
+<div class="ReklamYerleşdirin__right">
+<a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a href="#"><i class="fa-brands fa-instagram"></i></a>
+<a href="#"><i class="fa-solid fa-envelope"></i> Turbo@turbo.az</a>
+<span class="ReklamYerleşdirin__right__phoneNumbers">
+<a href="#"><i class="fa-solid fa-phone"></i></a> 
+<ul>
+<li><a href="#">(012) 599-08-01</a></li>
+<li><a href="#">(012) 505-77-55</a></li>
+</ul>
+</span>
+</div>     
+</div>
+</div>
+</div>
+<div class="car__list">
+<div class="container">
+<div class="car__list__content">
+<ul>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+</ul>
+<ul>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+</ul>
+<ul>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+</ul>
+<ul>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+<li><a href="#"><span>Abarth</span> (<span>4</span>)</a></li>
+
+</ul>
+</div>
+
+</div>
+</div>
+<div class="privacyPolicy">
+<div class="container">
+  <div class="privacyPolicy__content">
+<ul>
+<li><a href="#">Qaydalar</a></li>
+<li><a href="#">Qanun</a></li>
+<li><a href="#">Istifadəçi razılaşması</a></li>
+<li><a href="#">Məxfilik Siyasəti</a></li>
+</ul>
+  </div>  
+</div>
+</div>
+<footer class="footer">
+<div class="container">
+<div class="footer__content">
+<p>Saytın Administrasiyası reklam bannerlərinin və yerləşdirilmiş <br> elanların məzmununa görə məsuliyyət daşımır.</p>
+<ul>
+<li>2006-2023 Digital Classifieds MMC. VÖEN: 1405631661</li>
+<li><a href="#">Mobil versiyası</a></li>
+</ul>
+</div>
+</div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

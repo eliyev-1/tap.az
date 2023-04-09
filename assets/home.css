@@ -1,0 +1,395 @@
+.sorting{
+display: flex;
+justify-content: center;
+padding:  2rem 0;
+background-color: var(--color-grey-light);
+
+}
+.sorting__content__items{
+display: grid;
+grid-template-columns:repeat(4,1fr) ; 
+gap: 1rem;
+
+}
+.sorting__content{
+height: 11rem;
+overflow: hidden;
+}
+
+.satici{
+grid-column-start: 1;  
+}
+.guc{
+grid-column: 2/4;
+}
+.mashininVeziyyeti{
+grid-column: 1/3;    
+}
+
+select,input[type="text"],input[type="number"],input[type="checkbox"]{
+width: 100%; 
+height: 4.6rem;
+border-radius: 1rem;
+
+}
+
+input[type="text"],input[type="number"]{
+padding-left: 1rem;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button{
+-webkit-appearance: none;
+}
+select,input[type="text"],input[type="checkbox"],input[type="number"]{
+border:  0.05rem solid var(--color-grey-light-light-light-light-light);
+}
+option{
+    position: absolute;
+    width: 30rem;
+    right: 0;
+}
+input[type="text"]:nth-child(1){
+border-radius: 1rem 0 0 1rem ;
+}
+input[type="text"]:nth-child(2){
+border-radius: 0 1rem   1rem 0;
+}
+.valyutaSelect, .itifadeMuddeti, .qiymet,.il,.hecm,.guc,.mashininVeziyyeti,
+.yurush,.satici,.model,.marka,.weher{
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.model select,.marka select,.weher select{
+width: 10%;
+border-left: 0;
+}
+.model input,.marka input,.weher input{
+border-right: 0;
+}
+.valyutaSelect,.mashininVeziyyeti{
+column-gap: 2rem;
+}
+
+.itifadeMuddeti input[type="checkbox"],.satici input[type="checkbox"],.valyutaSelect input[type="checkbox"],.mashininVeziyyeti input[type="checkbox"]{
+appearance: none;
+-webkit-appearance: none;
+background-color: var(--color-white);
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+
+}
+.itifadeMuddeti input[type="checkbox"]:nth-of-type(n+1):checked, .satici input[type="checkbox"]:nth-of-type(n+1):checked{
+background-color: var(--color-red);
+color: var(--color-white);
+border: none;
+}
+.itifadeMuddeti input[type="checkbox"]:nth-of-type(1),.satici input[type="checkbox"]:nth-of-type(1),
+.il select:nth-of-type(1),.yurush input:nth-of-type(1),.hecm select:nth-of-type(1),.model input,.marka input,.weher input{
+border-radius: 1rem 0 0 1rem ;
+}
+.itifadeMuddeti input[type="checkbox"]:nth-of-type(2),.satici input[type="checkbox"]:nth-of-type(2){
+border-radius: 0 ;
+}
+.itifadeMuddeti input[type="checkbox"]:nth-of-type(3),.satici input[type="checkbox"]:nth-of-type(3),
+.il select:nth-of-type(2),.yurush input:nth-of-type(2),.hecm select:nth-of-type(2),.model select,.marka select,.weher select{
+border-radius: 0 1rem 1rem 0 ;
+}
+.itifadeMuddeti input[type="checkbox"]:nth-of-type(1):after,.satici input[type="checkbox"]:nth-of-type(1):after{
+content: 'Hamısı';
+}
+.valyutaSelect input[type="checkbox"]:nth-of-type(1):after{
+content: 'Kredit';
+}
+.valyutaSelect input[type="checkbox"]:nth-of-type(2):after{
+content: 'Barter';
+}
+.itifadeMuddeti input[type="checkbox"]:nth-of-type(2):after{
+content: 'Yeni';
+}
+.itifadeMuddeti input[type="checkbox"]:nth-of-type(3):after{
+content: 'Sürülmüş';
+}
+.satici input[type="checkbox"]:nth-of-type(2):after{
+content: 'Avtosalonlar';
+}
+.satici input[type="checkbox"]:nth-of-type(3):after{
+content: 'Şəxsi';
+}
+
+.mashininVeziyyeti input[type="checkbox"]:nth-of-type(1):after{
+content: 'Vuruğu yoxdur';
+}
+.mashininVeziyyeti input[type="checkbox"]:nth-of-type(2):after{
+content: 'Rənglənməyib';
+}
+.mashininVeziyyeti input[type="checkbox"]:nth-of-type(3):after{
+content: 'Yalnız qəzalı avtomobillər';
+}
+.itifadeMuddeti input[type="checkbox"]:nth-child(2),.satici input[type="checkbox"]:nth-child(2){
+border-top: 0.05rem solid var(--color-grey-light-light-light-light-light);
+border-bottom: 0.05rem solid var(--color-grey-light-light-light-light-light);
+}
+.itifadeMuddeti input[type="checkbox"]:nth-child(1),.itifadeMuddeti input[type="checkbox"]:nth-child(3),
+.satici input[type="checkbox"]:nth-child(1),.satici input[type="checkbox"]:nth-child(3){
+border:  0.05rem solid var(--color-grey-light-light-light-light-light);
+}
+.avtomobilinTechizati{
+margin-top: 1rem;
+}
+.avtomobilinTechizati h6{
+font-size: 1.5rem;
+}
+.avtomobilinTechizati__checkbox{
+margin-top: 2rem;   
+display: flex;
+flex-wrap: wrap;
+justify-content: start;
+column-gap: 1rem;
+row-gap: 3rem;
+font-size: 1.5rem;
+}
+.avtomobilinTechizati__checkbox label input[type="checkbox"]{
+display: none;
+}
+.avtomobilinTechizati__checkbox span{
+background-color: white;
+border-radius: 1rem;
+border:  0.05rem solid var(--color-grey-light-light-light-light-light);
+cursor: poiner;
+padding: 1rem;
+position: relative;
+}
+.avtomobilinTechizati__checkbox  input[type="checkbox"]:checked ~span{
+background-color: var(--color-red);
+color: var(--color-white);
+border: 0;
+}
+.hideShow,.hideShow__left,.hideShow__right,.dahaChox{
+display: flex;  
+align-items: center;
+justify-content: space-between;
+
+}
+.hideShow{
+justify-content: space-between;
+margin-top: 2rem;
+column-gap: 5rem;
+}
+.hideShow__left{
+column-gap: 1rem;
+}
+.hideShow__left a{
+color: #4c88f9;
+}
+.hideShow__left a:hover{
+color: var(--color-red);
+}
+.hideShow__right{
+color: var(--color-red);
+column-gap: 3rem;
+}
+.hideShow__right button{
+padding: 2rem;
+background-color: var(--color-red);
+color: var(--color-white);
+border-radius: 1rem;
+cursor: pointer;
+}
+.dahaChox{
+cursor: pointer;
+column-gap: 1rem;
+}
+
+@media (max-width:1050px){
+.sorting__content__items{
+display: inline;
+margin-bottom: 1rem;
+} 
+.sorting__content__item{
+margin-bottom: 1rem;
+}
+
+.sorting__content{
+height: 44rem;
+}
+
+}
+@media (max-width:700px){
+.hideShow{
+flex-wrap: wrap;
+} 
+.hideShow__right{
+width: 100%;
+justify-content: space-between;
+}
+
+}
+
+@media (max-width:950px){
+.header__menu{
+display: none;
+}
+
+}
+
+.section__header{
+display: flex;
+align-items: center;
+height: 5rem;
+background-color: var(--color-grey-light-light-light-light);
+color: var(--color-black-grey);
+
+
+font-size: 1.5rem;
+}
+.vipElanlar{
+background-color: var(--color-grey-light-light-light);
+padding-top: 3rem;
+padding-bottom: 3rem;
+
+}
+.section__header,.vipElanlar{
+display: flex;
+justify-content: center;
+}
+.vipElanlar__content{
+display: grid;
+grid-template-columns: auto auto auto auto;
+justify-content: space-between;
+gap: 2rem;
+}
+.vipElanlar__content__card{
+width: 100%;
+height: auto;
+border-radius: 1rem;
+background-color: var(--color-white);
+}
+.card__image {
+position: relative;
+}
+.card__image >img{
+border-radius: 1rem 1rem 0 0;
+}
+.barter__faiz{
+display: flex;
+column-gap: 1rem;
+position: absolute;
+top: 2rem;
+left: 2rem;
+}
+.barter,.faiz{
+position: relative;
+}
+
+.barter__faiz i{
+width: 3rem;
+height: 3rem;
+display: flex;
+border-radius: 100%;
+color: var(--color-white);
+justify-content: center;
+align-items: center;
+}
+
+
+.barter> i{
+position: relative;
+background-color:var(--color-green);
+color: var(--color-white);
+}
+.barter:hover::after,.faiz:hover::after{
+color: var(--color-white);
+font-size: 1.2rem;
+width: 12rem;
+height: 2rem;
+border-radius: 0.4rem;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: var(--main-font);
+}
+.faiz:hover::after{
+position: absolute;
+left: 1rem;
+top: 4rem;
+content: 'Kreditdədir';
+background-color: var(--color-yellow);
+}
+.barter:hover::after{
+position: absolute;
+left: 1rem;
+top: 4rem;
+content: 'Barter mümkündür';
+background-color: var(--color-green);
+}
+.faiz> i{
+background-color:var(--color-yellow);
+color: var(--color-white);
+}
+.salon{
+position: absolute;
+bottom: 2rem;
+left: 2rem;
+background-color: var(--color-blue);
+color: var(--color-white);
+padding: 0.5rem;
+border-radius: 0.5rem;
+
+}
+.heartIcon{
+cursor: pointer;
+position: absolute;
+top: 2rem;
+right: 2rem;
+}
+.heartIcon i:nth-child(1){
+color: var(--color-grey);
+opacity: 0.5;
+font-size: 3rem;
+}
+.heartIcon i:nth-child(2){
+position: absolute;
+top: 0;
+bottom: 50%;
+right: 50%;
+left: 0;
+
+color: var(--color-white);
+font-size: 3rem;
+}
+
+.vipElanlar__content__card p,.card__time,h3{
+padding: 0.5rem;
+line-height: 150%;
+width: 90%;
+color: var(--color-black-grey);
+}
+.card__time{
+color: var(--color-grey);
+}
+@media (max-width:1150px){
+.vipElanlar__content{
+
+grid-template-columns: auto auto auto;
+
+}   
+}
+@media (max-width:870px){
+.vipElanlar__content{
+
+grid-template-columns: auto auto;
+
+}   
+}
+@media (max-width:570px){
+.vipElanlar__content{
+grid-template-columns: auto;
+} 
+.vipElanlar__content__card{
+width: 100%;
+}  
+}
